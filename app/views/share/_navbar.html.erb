@@ -42,7 +42,6 @@
               <li> <%= link_to("Ingresar", new_user_session_path)%></li>
               <li> <%= link_to("Registrarse",  new_user_registration_path) %></li>
             <% else %>
-              <li><img src="<%= current_user.photo %>" ></li>
               <li> <li><%= current_user.name %></li><%= link_to("Salir",  destroy_user_session_path, method: :delete) %></li>
             <% end %>
       </ul>
