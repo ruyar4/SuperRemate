@@ -1,4 +1,5 @@
 class ProductsController < InheritedResources::Base
+	before_action :set_product, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@products = Product.all
@@ -14,7 +15,10 @@ class ProductsController < InheritedResources::Base
 	def show
 	end
 
-  private
+ private
+  	def set_product
+	    @product = Product.find(params[:id])
+	end
 
     def product_params
       params.require(:product).permit(:name, :description, :price)
