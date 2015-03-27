@@ -1,6 +1,9 @@
-<h1>Listing Products</h1>
+<div class="container, col-md-12">
+  <h1 style="float: left;">Listing Products</h1>
+  <h1 style="float: right;">Apuestas</h1>
+</div>
 
-<div class="container">
+<div class="container, col-md-8" style="float: clear;">
   <% @products.each do |product| %>
     <div class="col-md-3">
       <div class="thumbnail">
@@ -14,3 +17,13 @@
     </div>
   <% end %>
 </div>
+
+<div class="container, col-md-4">
+  <div class="apuestas">
+
+  </div>
+</div>
+
+
+
+  

@@ -1,5 +1,9 @@
 class BidsController < ApplicationController
 
+	def _index
+		@bids = Bid.last(20)
+	end
+
 	def new
 	    @product = Product.find(params[:product_id])
 	    @bid = Bid.last

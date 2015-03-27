@@ -1,0 +1,7 @@
+<% @bids.each do |bid| %>
+      <div class="thumbnail">
+        <h2><strong><%= bid.bid_price %> Ruyar-Coins</strong></h2>
+        <%= bid.user_id %><br>
+        $ <%= bid.product_id %>
+      </div>
+<% end %>
