@@ -1,24 +1,28 @@
-<div class="container, col-md-12">
+<p id="notice"><%= notice %></p>
+
+<div class="container col-md-12">
   <h1 style="float: left;">Listing Products</h1>
   <h1 style="float: right;">Apuestas</h1>
 </div>
 
-<div class="container, col-md-8" style="float: clear;">
+<div class="container col-md-9" style="float: clear;">
   <% @products.each do |product| %>
     <div class="col-md-3">
       <div class="thumbnail">
         <h2><strong><%= product.name %></strong></h2>
         <%= product.description %><br>
         $ <%= product.price %> Ruyar-Coins<br>
+        <%= product.status %>
+        <% time = (Time.now - product.created_at.to_time)/3600 %><br>
+        Tiempo transcurrido: <%= time.minutes.to_i %>min<br>
         <%= link_to 'Show', product, class: "btn btn-primary" %>
         <a href="<%= new_product_bid_path(product) %>" class="btn btn-primary">Bid</a>
-        <p id="notice"><%= notice %></p>
       </div>
     </div>
   <% end %>
 </div>
 
-<div class="container, col-md-4">
+<div class="container col-md-3">
   <div class="apuestas">
 
   </div>

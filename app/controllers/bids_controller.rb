@@ -7,7 +7,7 @@ class BidsController < ApplicationController
 	def new
 	    @product = Product.find(params[:product_id])
 	    @bid = Bid.last
-	    if current_user.id == @bid.user_id
+	    if current_user.id == @bid.user_id && @bid.product_id == @product.id
 	    	respond_to do |format|
 		        format.html { redirect_to products_path, notice: 'No puedes hacer dos pujas seguidas' }
 		    end
